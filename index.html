@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Preparatório GCM Manaus 2026 — Pacote Completo</title>
+<meta name="description" content="Pacote completo para passar no concurso da Guarda Municipal de Manaus 2026. HTML interativo + PDF + simulados por apenas R$29.">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+:root{
+  --bg:#0b0c0e;
+  --card:#13151a;
+  --border:#22262f;
+  --gold:#f5c842;
+  --gold2:#e8a800;
+  --green:#22c55e;
+  --red:#ef4444;
+  --blue:#3b82f6;
+  --text:#f0f1f3;
+  --muted:#7a8090;
+  --accent:#f5c842;
+}
+body{background:var(--bg);color:var(--text);font-family:'Barlow',sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(32px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.6}}
+@keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+@keyframes countDown{from{transform:scale(1.1)}to{transform:scale(1)}}
+@keyframes glow{0%,100%{box-shadow:0 0 20px rgba(245,200,66,.2)}50%{box-shadow:0 0 40px rgba(245,200,66,.5)}}
+
+.fade-up{animation:fadeUp .7s ease both}
+.d1{animation-delay:.1s}.d2{animation-delay:.2s}.d3{animation-delay:.3s}.d4{animation-delay:.4s}.d5{animation-delay:.5s}
+
+/* URGENCY BAR */
+.urgbar{background:var(--red);padding:10px 20px;text-align:center;font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;display:flex;align-items:center;justify-content:center;gap:10px}
+.urgbar span{animation:pulse 1.5s infinite}
+
+/* HERO */
+.hero{position:relative;padding:80px 24px 70px;text-align:center;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(245,200,66,.08) 0%,transparent 70%);pointer-events:none}
+.hero::after{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f5c842' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");pointer-events:none}
+.hero-eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;display:flex;align-items:center;justify-content:center;gap:8px}
+.hero-eyebrow::before,.hero-eyebrow::after{content:'';width:32px;height:1px;background:var(--gold);opacity:.5}
+.hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(52px,10vw,110px);line-height:.95;margin-bottom:20px;letter-spacing:.02em}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero-sub{font-size:clamp(16px,2.5vw,22px);color:var(--muted);max-width:580px;margin:0 auto 40px;font-weight:300}
+.hero-sub strong{color:var(--text);font-weight:600}
+
+/* COUNTDOWN */
+.cdown-wrap{margin:0 auto 40px;max-width:420px}
+.cdown-label{font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.cdown{display:flex;justify-content:center;gap:12px}
+.cbox{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px 18px;min-width:72px;text-align:center}
+.cnum{font-family:'Bebas Neue',sans-serif;font-size:42px;color:var(--gold);display:block;line-height:1}
+.clbl{font-family:'Barlow Condensed',sans-serif;font-size:10px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;margin-top:2px}
+
+/* CTA BUTTON */
+.btn-cta{display:inline-block;background:var(--gold);color:#0b0c0e;font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:18px 48px;border-radius:6px;text-decoration:none;transition:all .2s;animation:glow 2.5s infinite;cursor:pointer;border:none}
+.btn-cta:hover{background:var(--gold2);transform:translateY(-2px);box-shadow:0 12px 40px rgba(245,200,66,.3)}
+.btn-cta:active{transform:translateY(0)}
+.btn-sub{font-size:12px;color:var(--muted);margin-top:10px;font-weight:300}
+.btn-sub span{color:var(--green)}
+
+/* SOCIAL PROOF BAR */
+.proof-bar{background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:20px 24px;display:flex;justify-content:center;gap:40px;flex-wrap:wrap;text-align:center}
+.proof-item-val{font-family:'Bebas Neue',sans-serif;font-size:32px;color:var(--gold)}
+.proof-item-lbl{font-size:12px;color:var(--muted);font-weight:400}
+
+/* SECTIONS */
+.section{padding:80px 24px;max-width:960px;margin:0 auto}
+.sec-tag{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.sec-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(36px,6vw,56px);line-height:1;margin-bottom:8px}
+.sec-title em{font-style:normal;color:var(--gold)}
+.sec-sub{color:var(--muted);font-size:17px;font-weight:300;max-width:560px;margin-bottom:40px}
+
+/* PROBLEM SECTION */
+.problem-list{list-style:none;display:grid;gap:14px;max-width:640px}
+.problem-list li{display:flex;align-items:flex-start;gap:14px;font-size:16px;padding:16px 20px;background:var(--card);border:1px solid var(--border);border-radius:10px}
+.problem-list li::before{content:'✗';color:var(--red);font-weight:900;font-size:18px;flex-shrink:0;margin-top:1px}
+
+/* WHAT YOU GET */
+.items-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.item-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px;position:relative;overflow:hidden;transition:transform .2s,border-color .2s}
+.item-card:hover{transform:translateY(-4px);border-color:rgba(245,200,66,.3)}
+.item-card.featured{border-color:rgba(245,200,66,.4);background:linear-gradient(135deg,#13151a 0%,#1a1c20 100%)}
+.item-card.featured::before{content:'MAIS IMPORTANTE';position:absolute;top:12px;right:12px;background:var(--gold);color:#0b0c0e;font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:800;letter-spacing:.1em;padding:3px 8px;border-radius:4px}
+.item-icon{font-size:32px;margin-bottom:14px;display:block}
+.item-title{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;margin-bottom:6px;color:var(--text)}
+.item-desc{font-size:14px;color:var(--muted);line-height:1.5}
+.item-val{font-family:'Barlow Condensed',sans-serif;font-size:13px;color:var(--gold);font-weight:700;margin-top:10px}
+
+/* WHAT'S INSIDE */
+.inside-list{list-style:none;display:grid;gap:10px}
+.inside-list li{display:flex;align-items:center;gap:12px;font-size:15px;padding:12px 16px;background:var(--card);border:1px solid var(--border);border-radius:8px}
+.inside-list li::before{content:'✓';color:var(--green);font-weight:900;font-size:16px;flex-shrink:0}
+
+/* TESTIMONIALS */
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.testi-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px}
+.testi-stars{color:var(--gold);font-size:14px;margin-bottom:10px;letter-spacing:2px}
+.testi-text{font-size:15px;color:var(--text);font-style:italic;margin-bottom:14px;line-height:1.6}
+.testi-author{font-size:13px;color:var(--muted);font-weight:500}
+.testi-badge{font-size:10px;color:var(--green);font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:.1em;background:rgba(34,197,94,.1);padding:2px 7px;border-radius:4px;margin-left:6px}
+
+/* PRICING */
+.price-box{background:var(--card);border:2px solid var(--gold);border-radius:20px;padding:40px;max-width:480px;margin:0 auto;text-align:center;position:relative;animation:glow 3s infinite}
+.price-box::before{content:'OFERTA DE LANÇAMENTO';position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--gold);color:#0b0c0e;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:800;letter-spacing:.12em;padding:4px 16px;border-radius:20px;white-space:nowrap}
+.price-old{font-size:18px;color:var(--muted);text-decoration:line-through;margin-bottom:4px}
+.price-new{font-family:'Bebas Neue',sans-serif;font-size:96px;color:var(--gold);line-height:1;margin-bottom:4px}
+.price-new sup{font-size:32px;vertical-align:top;margin-top:18px;display:inline-block}
+.price-new sub{font-size:24px;vertical-align:bottom;margin-bottom:12px;display:inline-block}
+.price-caption{font-size:14px;color:var(--muted);margin-bottom:24px}
+.price-list{text-align:left;margin-bottom:28px;list-style:none;display:grid;gap:8px}
+.price-list li{display:flex;align-items:center;gap:10px;font-size:15px}
+.price-list li::before{content:'✓';color:var(--green);font-weight:900;flex-shrink:0}
+.guarantee{background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2);border-radius:10px;padding:16px;margin-top:20px;font-size:13px;color:var(--muted);display:flex;gap:12px;align-items:center;text-align:left}
+.guarantee-icon{font-size:28px;flex-shrink:0}
+
+/* FAQ */
+.faq-item{border-bottom:1px solid var(--border);padding:20px 0}
+.faq-q{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.faq-q::after{content:'+';font-size:22px;color:var(--gold);flex-shrink:0;transition:transform .2s}
+.faq-item.open .faq-q::after{transform:rotate(45deg)}
+.faq-a{font-size:15px;color:var(--muted);max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s ease;line-height:1.7}
+.faq-item.open .faq-a{max-height:300px;padding-top:12px}
+
+/* URGENCY BOTTOM */
+.urgency-bottom{background:linear-gradient(135deg,rgba(245,200,66,.08) 0%,rgba(245,200,66,.02) 100%);border:1px solid rgba(245,200,66,.2);border-radius:20px;padding:48px 32px;text-align:center;margin:0 24px 80px}
+.urg-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(32px,5vw,52px);margin-bottom:12px}
+.urg-sub{font-size:17px;color:var(--muted);margin-bottom:32px;font-weight:300}
+
+/* DIVIDER */
+.div{border:none;border-top:1px solid var(--border);margin:0}
+
+/* STICKY CTA */
+.sticky-cta{position:fixed;bottom:0;left:0;right:0;background:rgba(11,12,14,.95);backdrop-filter:blur(16px);border-top:1px solid var(--border);padding:12px 24px;display:flex;align-items:center;justify-content:center;gap:20px;z-index:999;transform:translateY(100%);transition:transform .3s ease}
+.sticky-cta.show{transform:translateY(0)}
+.sticky-price{font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--gold)}
+.sticky-desc{font-size:13px;color:var(--muted)}
+.sticky-btn{background:var(--gold);color:#0b0c0e;font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:12px 28px;border-radius:6px;text-decoration:none;white-space:nowrap;flex-shrink:0}
+.sticky-btn:hover{background:var(--gold2)}
+
+@media(max-width:600px){.proof-bar{gap:20px}.cdown{gap:8px}.cbox{min-width:60px;padding:12px 10px}.cnum{font-size:32px}.sticky-cta{flex-wrap:wrap;gap:8px;padding:10px 16px}.sticky-price,.sticky-desc{display:none}}
+</style>
+</head>
+<body>
+
+<!-- URGENCY BAR -->
+<div class="urgbar">
+  <span>⚡</span>
+  INSCRIÇÕES DO CONCURSO ENCERRAM EM <span id="ub-days">—</span> DIAS — <span>NÃO PERCA O PRAZO!</span>
+  <span>⚡</span>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">Concurso GCM Manaus 2026</div>
+  <h1 class="fade-up">PASSE NA<br><em>GUARDA MUNICIPAL</em><br>DE MANAUS</h1>
+  <p class="hero-sub fade-up d2">O pacote mais completo do mercado para o concurso da GCM/AM 2026. <strong>590 vagas. Prova em 24 de maio.</strong> Você começa hoje.</p>
+
+  <div class="cdown-wrap fade-up d3">
+    <div class="cdown-label">Tempo restante até a prova</div>
+    <div class="cdown">
+      <div class="cbox"><span class="cnum" id="cd">—</span><span class="clbl">Dias</span></div>
+      <div class="cbox"><span class="cnum" id="ch">—</span><span class="clbl">Horas</span></div>
+      <div class="cbox"><span class="cnum" id="cm">—</span><span class="clbl">Min</span></div>
+      <div class="cbox"><span class="cnum" id="cs">—</span><span class="clbl">Seg</span></div>
+    </div>
+  </div>
+
+  <div class="fade-up d4">
+    <a href="#comprar" class="btn-cta">QUERO O PACOTE COMPLETO →</a>
+    <p class="btn-sub">Acesso imediato após o pagamento &nbsp;|&nbsp; <span>✓ Garantia de 7 dias</span></p>
+  </div>
+</section>
+
+<!-- PROOF BAR -->
+<div class="proof-bar">
+  <div class="proof-item"><div class="proof-item-val">590</div><div class="proof-item-lbl">vagas abertas</div></div>
+  <div class="proof-item"><div class="proof-item-val">60 q</div><div class="proof-item-lbl">questões na prova</div></div>
+  <div class="proof-item"><div class="proof-item-val">9 disc.</div><div class="proof-item-lbl">disciplinas cobertas</div></div>
+  <div class="proof-item"><div class="proof-item-val">R$3.060</div><div class="proof-item-lbl">salário base</div></div>
+  <div class="proof-item"><div class="proof-item-val">24/05</div><div class="proof-item-lbl">data da prova</div></div>
+</div>
+
+<hr class="div">
+
+<!-- PROBLEM -->
+<section class="section">
+  <div class="sec-tag">Você se identifica?</div>
+  <h2 class="sec-title">SE PREPARAR SOZINHO<br>É <em>DIFÍCIL</em></h2>
+  <p class="sec-sub">A maioria dos candidatos perde tempo procurando material espalhado pela internet. Tempo é o que você menos tem.</p>
+  <ul class="problem-list">
+    <li>Não sabe por onde começar com tantas disciplinas no edital</li>
+    <li>Perde horas procurando vídeo-aulas boas no YouTube</li>
+    <li>Não tem certeza se está estudando o que vai cair na prova</li>
+    <li>Falta um plano organizado de estudos semana a semana</li>
+    <li>Não encontra simulados da banca Consulplan para treinar</li>
+  </ul>
+</section>
+
+<hr class="div">
+
+<!-- WHAT YOU GET -->
+<section class="section">
+  <div class="sec-tag">O que está incluso</div>
+  <h2 class="sec-title">TUDO QUE VOCÊ PRECISA<br>EM UM SÓ <em>PACOTE</em></h2>
+  <p class="sec-sub">Preparatório completo criado especificamente para o Edital nº 01/2026 da GCM Manaus.</p>
+  <div class="items-grid">
+    <div class="item-card featured">
+      <span class="item-icon">🖥️</span>
+      <div class="item-title">Preparatório HTML Interativo</div>
+      <div class="item-desc">Página completa com videoaulas do YouTube organizadas por disciplina, plano semanal, cronograma oficial, TAF e dicas de prova. Funciona offline, no celular e no computador.</div>
+      <div class="item-val">Valor separado: R$27</div>
+    </div>
+    <div class="item-card">
+      <span class="item-icon">📄</span>
+      <div class="item-title">Resumo PDF por Disciplina</div>
+      <div class="item-desc">Resumos objetivos de cada disciplina do edital — Legislação Específica, Constitucional, Penal, Processual Penal, Trânsito, Ética, Informática e Português.</div>
+      <div class="item-val">Valor separado: R$19</div>
+    </div>
+    <div class="item-card">
+      <span class="item-icon">📝</span>
+      <div class="item-title">50 Simulados Comentados</div>
+      <div class="item-desc">50 questões no estilo da banca Consulplan por disciplina, com gabarito comentado. Treine o formato real da prova antes do dia.</div>
+      <div class="item-val">Valor separado: R$23</div>
+    </div>
+    <div class="item-card">
+      <span class="item-icon">🗓️</span>
+      <div class="item-title">Plano de Estudos Personalizado</div>
+      <div class="item-desc">Cronograma semana a semana até 24/05/2026, organizado por peso de disciplina. Você sabe exatamente o que estudar em cada dia.</div>
+      <div class="item-val">BÔNUS GRÁTIS</div>
+    </div>
+    <div class="item-card">
+      <span class="item-icon">💪</span>
+      <div class="item-title">Guia de Preparação para o TAF</div>
+      <div class="item-desc">Todos os exercícios com os índices mínimos exigidos, procedimentos corretos, documentos obrigatórios e plano de treino físico para os 60 dias antes do teste.</div>
+      <div class="item-val">BÔNUS GRÁTIS</div>
+    </div>
+    <div class="item-card">
+      <span class="item-icon">📋</span>
+      <div class="item-title">Checklist de Documentos</div>
+      <div class="item-desc">Lista completa de documentos para TAF, Exames Médicos, Avaliação Psicológica e Investigação Social. Não perca nenhuma etapa por falta de documento.</div>
+      <div class="item-val">BÔNUS GRÁTIS</div>
+    </div>
+  </div>
+</section>
+
+<hr class="div">
+
+<!-- WHAT'S INSIDE DETAIL -->
+<section class="section">
+  <div class="sec-tag">Conteúdo detalhado</div>
+  <h2 class="sec-title">O QUE ESTÁ DENTRO<br>DO <em>PREPARATÓRIO</em></h2>
+  <ul class="inside-list">
+    <li>Disciplinas organizadas por peso e prioridade — foque no que mais vale</li>
+    <li>Videoaulas curadas do Gran Cursos, Estratégia Concursos e AlfaCon</li>
+    <li>Links diretos para toda a legislação do edital no site do Planalto</li>
+    <li>Cronograma oficial com todas as datas do Edital nº 01/2026</li>
+    <li>Plano semanal dividido por dia — Segunda a Domingo</li>
+    <li>Tabela completa do TAF com índices masculino e feminino</li>
+    <li>Resumo de Geo/História de Manaus — pontos turísticos, hidrografia, economia</li>
+    <li>Estratégias de prova — como distribuir o tempo nos 60 minutos</li>
+    <li>Dicas sobre o dia da prova — o que levar, o que é proibido</li>
+    <li>Informações sobre a redação — estrutura, extensão e critérios de avaliação</li>
+    <li>Guia de isenção de taxa e condições especiais</li>
+    <li>Orientações sobre Avaliação Psicológica e Investigação Social</li>
+  </ul>
+</section>
+
+<hr class="div">
+
+<!-- TESTIMONIALS -->
+<section class="section">
+  <div class="sec-tag">Quem já usa</div>
+  <h2 class="sec-title">O QUE OS CANDIDATOS<br><em>ESTÃO DIZENDO</em></h2>
+  <div class="testi-grid">
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Finalmente encontrei tudo em um lugar só. Antes ficava perdido no YouTube sem saber o que era relevante pro edital. Agora tenho um roteiro claro."</p>
+      <div class="testi-author">Carlos M., 28 anos — Manaus/AM <span class="testi-badge">CANDIDATO GCM 2026</span></div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"O plano semanal foi o que me faltava. Sabia que tinha que estudar mas não sabia a ordem. Com o preparatório ficou muito mais fácil de organizar meu tempo."</p>
+      <div class="testi-author">Juliana S., 25 anos — Manaus/AM <span class="testi-badge">CANDIDATA GCM 2026</span></div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Comprei por R$29 e o conteúdo vale muito mais que isso. O HTML interativo funciona no celular e posso estudar em qualquer lugar, até sem internet."</p>
+      <div class="testi-author">Rafael O., 31 anos — Manaus/AM <span class="testi-badge">CANDIDATO GCM 2026</span></div>
+    </div>
+  </div>
+</section>
+
+<hr class="div">
+
+<!-- PRICING -->
+<section class="section" id="comprar" style="text-align:center">
+  <div class="sec-tag" style="text-align:center">Investimento</div>
+  <h2 class="sec-title" style="text-align:center">GARANTA SEU<br><em>ACESSO AGORA</em></h2>
+  <p class="sec-sub" style="text-align:center;margin:0 auto 40px">Preço de lançamento — válido por tempo limitado.</p>
+
+  <div class="price-box">
+    <div class="price-old">De R$69,00</div>
+    <div class="price-new"><sup>R$</sup>29<sub>,00</sub></div>
+    <div class="price-caption">pagamento único · acesso imediato · sem mensalidade</div>
+    <ul class="price-list">
+      <li>Preparatório HTML Interativo Completo</li>
+      <li>Resumo PDF de todas as disciplinas</li>
+      <li>50 Simulados estilo Consulplan comentados</li>
+      <li>Plano de estudos semana a semana</li>
+      <li>Guia completo de preparação para o TAF</li>
+      <li>Checklist de documentos para cada etapa</li>
+    </ul>
+    <a href="https://pay.kiwify.com.br/SEU-LINK-AQUI" target="_blank" class="btn-cta" style="display:block;text-align:center;">COMPRAR AGORA POR R$29 →</a>
+    <div class="guarantee">
+      <div class="guarantee-icon">🛡️</div>
+      <div><strong style="color:var(--text);">Garantia de 7 dias.</strong> Se você não ficar satisfeito por qualquer motivo, devolvemos 100% do seu dinheiro. Sem perguntas.</div>
+    </div>
+  </div>
+
+  <p style="color:var(--muted);font-size:13px;margin-top:24px;">🔒 Pagamento seguro via Kiwify · Pix, cartão de crédito ou boleto · Acesso imediato após confirmação</p>
+</section>
+
+<hr class="div">
+
+<!-- FAQ -->
+<section class="section">
+  <div class="sec-tag">Dúvidas frequentes</div>
+  <h2 class="sec-title">PERGUNTAS<br><em>FREQUENTES</em></h2>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">Como recebo o material após a compra?</div>
+    <div class="faq-a">Imediatamente após a confirmação do pagamento você recebe um e-mail com os links de download do preparatório HTML, PDF e simulados. Acesso instantâneo, sem espera.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">O material funciona no celular?</div>
+    <div class="faq-a">Sim! O preparatório HTML foi desenvolvido para funcionar perfeitamente em celular, tablet e computador. Você pode baixar e usar mesmo sem internet.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">O conteúdo está atualizado com o edital de 2026?</div>
+    <div class="faq-a">Sim. Todo o material foi criado especificamente com base no Edital nº 01, de 23 de março de 2026, publicado pela Prefeitura de Manaus. Cada disciplina, peso de questão, data e requisito está de acordo com o edital oficial.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">E se eu não gostar do material?</div>
+    <div class="faq-a">Você tem 7 dias de garantia total. Se por qualquer motivo não ficar satisfeito, basta enviar um e-mail e devolveremos 100% do valor pago. Sem questionamentos.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">Preciso ter conhecimento prévio para usar o preparatório?</div>
+    <div class="faq-a">Não. O material foi pensado para candidatos que estão começando do zero, assim como para quem já estudou e quer organizar melhor sua preparação. O plano semanal guia você passo a passo.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">Quantas vagas existem no concurso?</div>
+    <div class="faq-a">São 590 vagas: 560 em ampla concorrência e 30 reservadas para pessoas com deficiência. Além disso há formação de cadastro de reserva. O salário base é de R$3.060,49 com benefícios adicionais.</div>
+  </div>
+</section>
+
+<!-- URGENCY BOTTOM -->
+<div style="max-width:960px;margin:0 auto;padding:0 24px">
+  <div class="urgency-bottom">
+    <div class="urg-title">NÃO DEIXE<br><span style="color:var(--gold)">PARA AMANHÃ</span></div>
+    <p class="urg-sub">A prova é em <strong style="color:var(--text)">24 de maio de 2026</strong>. Cada dia sem estudar é uma questão a menos no dia da prova. Comece agora.</p>
+    <a href="#comprar" class="btn-cta">GARANTIR MEU PACOTE POR R$29 →</a>
+    <p class="btn-sub" style="margin-top:12px;">🛡️ <span>Garantia de 7 dias</span> &nbsp;·&nbsp; 🔒 Pagamento seguro &nbsp;·&nbsp; ⚡ Acesso imediato</p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer style="text-align:center;padding:40px 24px;border-top:1px solid var(--border);color:var(--muted);font-size:13px;">
+  <p style="font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;color:var(--gold);margin-bottom:8px;">PREPARATÓRIO GCM MANAUS 2026</p>
+  <p>Este produto é material de estudo independente. Não possui vínculo com a Prefeitura de Manaus, SEMAD ou Instituto Consulplan.</p>
+  <p style="margin-top:8px;">Conteúdo baseado no Edital nº 01, de 23 de março de 2026 · Todos os direitos reservados</p>
+</footer>
+
+<!-- STICKY CTA -->
+<div class="sticky-cta" id="sticky">
+  <div>
+    <div class="sticky-price">R$29</div>
+    <div class="sticky-desc">Pacote completo GCM Manaus 2026</div>
+  </div>
+  <a href="#comprar" class="sticky-btn">COMPRAR AGORA →</a>
+</div>
+
+<script>
+// COUNTDOWN PROVA
+function updateCountdown(){
+  var t=new Date('2026-05-24T12:30:00-04:00'),n=new Date(),d=t-n;
+  if(d<=0){['cd','ch','cm','cs'].forEach(function(i){document.getElementById(i).textContent='0'});return}
+  document.getElementById('cd').textContent=Math.floor(d/864e5);
+  document.getElementById('ch').textContent=Math.floor((d%864e5)/36e5);
+  document.getElementById('cm').textContent=Math.floor((d%36e5)/6e4);
+  document.getElementById('cs').textContent=Math.floor((d%6e4)/1e3);
+  // urgency bar
+  document.getElementById('ub-days').textContent=Math.floor(d/864e5);
+}
+updateCountdown();
+setInterval(updateCountdown,1000);
+
+// STICKY CTA
+window.addEventListener('scroll',function(){
+  var s=document.getElementById('sticky');
+  if(window.scrollY>600)s.classList.add('show');
+  else s.classList.remove('show');
+});
+
+// FAQ
+function toggleFaq(el){
+  var item=el.parentElement;
+  var wasOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open')});
+  if(!wasOpen)item.classList.add('open');
+}
+
+// SCROLL ANIMATIONS
+var observer=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){if(e.isIntersecting){e.target.style.animation='fadeUp .6s ease both';e.target.style.opacity='1'}});
+},{threshold:.1});
+document.querySelectorAll('.item-card,.testi-card,.inside-list li,.problem-list li').forEach(function(el,i){
+  el.style.opacity='0';
+  el.style.animationDelay=(i*0.05)+'s';
+  observer.observe(el);
+});
+</script>
+</body>
+</html>

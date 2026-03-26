@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Preparatório GCM Manaus 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0f;--card:#16161f;--border:#2a2a3a;--accent:#4f6ef7;--accent2:#00d4a8;--accent3:#f7c948;--accent4:#f74f6e;--text:#e8e8f0;--muted:#6b6b85;--tag:#1e1e2e}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.7}
+.hero{position:relative;overflow:hidden;padding:80px 40px 60px;text-align:center;border-bottom:1px solid var(--border)}
+.hero::before{content:'';position:absolute;top:-120px;left:50%;transform:translateX(-50%);width:700px;height:400px;background:radial-gradient(ellipse,rgba(79,110,247,.18) 0%,transparent 70%);pointer-events:none}
+.hero-badge{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--accent2);border:1px solid var(--accent2);padding:4px 12px;border-radius:20px;margin-bottom:24px;letter-spacing:.08em}
+.hero h1{font-family:'Syne',sans-serif;font-size:clamp(36px,6vw,72px);font-weight:800;line-height:1.05;margin-bottom:16px}
+.hero h1 span{color:var(--accent)}
+.hero>p{font-size:16px;color:var(--muted);max-width:520px;margin:0 auto 32px}
+.cdown{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-bottom:24px}
+.cbox{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 24px;text-align:center;min-width:90px}
+.cnum{font-family:'Syne',sans-serif;font-size:36px;font-weight:800;color:var(--accent);display:block}
+.clbl{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase}
+.hstats{display:flex;justify-content:center;gap:32px;flex-wrap:wrap}
+.hstat-val{font-family:'Syne',sans-serif;font-size:28px;font-weight:700}
+.hstat-lbl{font-size:12px;color:var(--muted)}
+.nav{position:sticky;top:0;background:rgba(10,10,15,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);z-index:100;padding:0 32px;display:flex;gap:2px;overflow-x:auto;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav-item{font-family:'IBM Plex Mono',monospace;font-size:12px;padding:14px 13px;color:var(--muted);cursor:pointer;white-space:nowrap;border-bottom:2px solid transparent;transition:all .2s;text-decoration:none;display:block}
+.nav-item:hover,.nav-item.active{color:var(--accent);border-bottom-color:var(--accent)}
+.main{max-width:1100px;margin:0 auto;padding:60px 24px}
+.sec{margin-bottom:80px}
+.sec-tag{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--accent2);letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px}
+.sec-title{font-family:'Syne',sans-serif;font-size:32px;font-weight:700}
+.sec-sub{color:var(--muted);margin-top:8px;max-width:640px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;transition:border-color .2s}
+.card:hover{border-color:#3a3a5a}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+/* TABLE */
+.dtbl{width:100%;border-collapse:collapse}
+.dtbl th{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);text-align:left;padding:8px 12px;border-bottom:1px solid var(--border);letter-spacing:.06em;text-transform:uppercase}
+.dtbl td{padding:13px 12px;border-bottom:1px solid rgba(42,42,58,.5);vertical-align:middle;font-size:14px}
+.dtbl tr:last-child td{border-bottom:none}
+.dtbl tr:hover td{background:rgba(79,110,247,.04)}
+.bar{background:rgba(255,255,255,.06);border-radius:4px;height:6px;min-width:80px}
+.bar-f{height:6px;border-radius:4px}
+.pts{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;padding:3px 10px;border-radius:20px;display:inline-block}
+.pts-h{background:rgba(79,110,247,.15);color:#7b9bff}
+.pts-m{background:rgba(0,212,168,.12);color:#00d4a8}
+.pts-l{background:rgba(107,107,133,.15);color:#9999bb}
+.ph{color:var(--accent4);font-size:11px;font-weight:600}
+.pm{color:var(--accent3);font-size:11px;font-weight:600}
+.pl{color:var(--muted);font-size:11px}
+/* VIDEO */
+.dtabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.dtab{font-family:'IBM Plex Mono',monospace;font-size:11px;padding:7px 13px;border-radius:20px;border:1px solid var(--border);cursor:pointer;color:var(--muted);background:transparent;transition:all .18s;white-space:nowrap}
+.dtab:hover{border-color:var(--accent);color:var(--accent)}
+.dtab.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+.dpanel{display:none}
+.dpanel.active{display:block}
+.vgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px}
+.vcard{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:transform .2s,border-color .2s;text-decoration:none;color:inherit;display:block}
+.vcard:hover{transform:translateY(-3px);border-color:#3a3a5a}
+.vthumb{width:100%;aspect-ratio:16/9;background:#1a1a2e;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.vthumb img{width:100%;height:100%;object-fit:cover}
+.pbtn{position:absolute;width:48px;height:48px;background:rgba(79,110,247,.9);border-radius:50%;display:flex;align-items:center;justify-content:center}
+.pbtn::after{content:'';border-left:18px solid white;border-top:11px solid transparent;border-bottom:11px solid transparent;margin-left:3px}
+.vinfo{padding:13px 15px}
+.vchan{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--accent2);letter-spacing:.07em;margin-bottom:3px;text-transform:uppercase}
+.vtitle{font-size:13px;font-weight:500;line-height:1.4;margin-bottom:6px}
+.vmeta{font-size:11px;color:var(--muted);display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.vbadge{font-size:10px;padding:2px 7px;border-radius:8px;font-weight:600}
+.bp{background:rgba(79,110,247,.15);color:#7b9bff}
+.ba{background:rgba(0,212,168,.12);color:#00d4a8}
+.chan-hdr{display:flex;align-items:center;gap:12px;margin-bottom:16px;padding:14px 18px;background:var(--tag);border-radius:12px;border:1px solid var(--border)}
+.chan-logo{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;flex-shrink:0}
+.chan-name{font-family:'Syne',sans-serif;font-size:15px;font-weight:700}
+.chan-desc{font-size:12px;color:var(--muted)}
+.chan-lnk{margin-left:auto;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--accent);text-decoration:none;padding:6px 12px;border:1px solid var(--accent);border-radius:8px;white-space:nowrap}
+.chan-lnk:hover{background:var(--accent);color:#fff}
+/* LINKS */
+.lnk{display:flex;align-items:flex-start;gap:14px;padding:15px;border:1px solid var(--border);border-radius:12px;margin-bottom:9px;text-decoration:none;color:inherit;transition:all .2s}
+.lnk:hover{border-color:var(--accent);background:rgba(79,110,247,.04)}
+.lico{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;background:var(--tag)}
+.ltitle{font-size:14px;font-weight:500;margin-bottom:3px}
+.ldesc{font-size:12px;color:var(--muted)}
+.lbadge{font-family:'IBM Plex Mono',monospace;font-size:10px;padding:2px 7px;border-radius:10px;margin-left:6px}
+.free{background:rgba(0,212,168,.12);color:#00d4a8}
+/* CRONO */
+.ci{display:flex;gap:18px;padding:15px 0;border-bottom:1px solid rgba(42,42,58,.5);align-items:flex-start}
+.ci:last-child{border-bottom:none}
+.cdate{font-family:'IBM Plex Mono',monospace;font-size:12px;min-width:95px;padding-top:2px;flex-shrink:0}
+.cu{color:var(--accent4)}
+.cn{color:var(--muted)}
+.cdot{width:8px;height:8px;border-radius:50%;margin-top:6px;flex-shrink:0}
+.dr{background:var(--accent4)}.dg{background:var(--accent2)}.dy{background:var(--accent3)}.dm{background:var(--muted)}
+/* WEEK */
+.wgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px}
+.wcard{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px 14px;transition:transform .2s,border-color .2s}
+.wcard:hover{transform:translateY(-3px)}
+.wday{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+.wsub{font-size:12px;margin-bottom:4px}
+.wdet{font-size:11px;color:var(--muted);line-height:1.4}
+.wt{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--accent2);margin-top:10px}
+/* TAF */
+.ttbl{width:100%;border-collapse:collapse}
+.ttbl th{background:var(--tag);font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);padding:10px 14px;text-align:left;letter-spacing:.06em}
+.ttbl td{padding:14px;border-bottom:1px solid var(--border);font-size:14px}
+.ttbl tr:last-child td{border-bottom:none}
+.masc{color:#7b9bff;font-weight:600}
+.fem{color:#f9a8c9;font-weight:600}
+/* TIPS */
+.tip{border-left:3px solid var(--accent);padding:13px 17px;background:rgba(79,110,247,.06);border-radius:0 10px 10px 0;margin-bottom:11px;font-size:14px;line-height:1.6}
+.tw{border-left-color:var(--accent3);background:rgba(247,201,72,.06)}
+.td{border-left-color:var(--accent4);background:rgba(247,79,110,.06)}
+.ts{border-left-color:var(--accent2);background:rgba(0,212,168,.06)}
+.alert{background:rgba(247,79,110,.08);border:1px solid rgba(247,79,110,.3);border-radius:12px;padding:15px 20px;margin-bottom:24px;font-size:14px;color:#fbbdd0}
+.alert strong{color:var(--accent4)}
+footer{text-align:center;padding:40px;border-top:1px solid var(--border);color:var(--muted);font-size:13px;font-family:'IBM Plex Mono',monospace}
+footer a{color:var(--accent);text-decoration:none}
+@media(max-width:600px){.hero{padding:50px 20px 40px}.main{padding:40px 16px}.nav{padding:0 10px}.wgrid{grid-template-columns:repeat(2,1fr)}.vgrid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-badge">// EDITAL Nº 01 — 23/03/2026</div>
+  <h1>Preparatório<br><span>GCM Manaus</span><br>2026</h1>
+  <p>Videoaulas gratuitas por disciplina, fontes oficiais, plano de estudos, cronograma e TAF — tudo num só lugar.</p>
+  <div class="cdown">
+    <div class="cbox"><span class="cnum" id="cd">—</span><span class="clbl">Dias</span></div>
+    <div class="cbox"><span class="cnum" id="ch">—</span><span class="clbl">Horas</span></div>
+    <div class="cbox"><span class="cnum" id="cm">—</span><span class="clbl">Min</span></div>
+  </div>
+  <p style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted);margin-bottom:28px;">até a prova — 24 de maio de 2026</p>
+  <div class="hstats">
+    <div><div class="hstat-val">590</div><div class="hstat-lbl">vagas</div></div>
+    <div><div class="hstat-val">60 q</div><div class="hstat-lbl">questões</div></div>
+    <div><div class="hstat-val">R$3.060</div><div class="hstat-lbl">salário base</div></div>
+    <div><div class="hstat-val">6</div><div class="hstat-lbl">etapas</div></div>
+  </div>
+</section>
+
+<nav class="nav">
+  <a class="nav-item active" href="#disc">Disciplinas</a>
+  <a class="nav-item" href="#video">Videoaulas</a>
+  <a class="nav-item" href="#fontes">Fontes</a>
+  <a class="nav-item" href="#crono">Cronograma</a>
+  <a class="nav-item" href="#plano">Plano Semanal</a>
+  <a class="nav-item" href="#taf">TAF</a>
+  <a class="nav-item" href="#dicas">Dicas</a>
+</nav>
+
+<main class="main">
+
+<div class="alert"><strong>⚠ URGENTE:</strong> Inscrições até <strong>16/04/2026 às 15h</strong> — <strong>www.institutoconsulplan.org.br</strong> | Taxa: R$150 | Isenção: até 27/03/2026</div>
+
+<!-- DISCIPLINAS -->
+<section class="sec" id="disc">
+  <div class="sec-tag">// 01 — prova objetiva</div>
+  <h2 class="sec-title">Disciplinas & Pesos</h2>
+  <p class="sec-sub" style="margin-bottom:24px;">60 questões • 100 pontos • mínimo 60 pts. Legislação Específica = 30% da prova inteira.</p>
+  <div class="card" style="overflow-x:auto;">
+    <table class="dtbl">
+      <thead><tr><th>Disciplina</th><th>Q</th><th>Pts/q</th><th>Total</th><th>Peso</th><th>Prioridade</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Legislação Específica</strong></td><td>15</td><td>2,0</td><td><span class="pts pts-h">30 pts</span></td><td><div class="bar"><div class="bar-f" style="width:100%;background:#4f6ef7;"></div></div></td><td><span class="ph">MÁXIMA</span></td></tr>
+        <tr><td>Língua Portuguesa</td><td>10</td><td>1,5</td><td><span class="pts pts-m">15 pts</span></td><td><div class="bar"><div class="bar-f" style="width:50%;background:#00d4a8;"></div></div></td><td><span class="ph">ALTA</span></td></tr>
+        <tr><td>Direito Constitucional</td><td>5</td><td>2,0</td><td><span class="pts pts-m">10 pts</span></td><td><div class="bar"><div class="bar-f" style="width:33%;background:#00d4a8;"></div></div></td><td><span class="ph">ALTA</span></td></tr>
+        <tr><td>Direito Penal</td><td>5</td><td>1,5</td><td><span class="pts pts-l">7,5 pts</span></td><td><div class="bar"><div class="bar-f" style="width:25%;background:#6b6b85;"></div></div></td><td><span class="pm">MÉDIA</span></td></tr>
+        <tr><td>Dir. Processual Penal</td><td>5</td><td>1,5</td><td><span class="pts pts-l">7,5 pts</span></td><td><div class="bar"><div class="bar-f" style="width:25%;background:#6b6b85;"></div></div></td><td><span class="pm">MÉDIA</span></td></tr>
+        <tr><td>Legislação de Trânsito</td><td>5</td><td>1,5</td><td><span class="pts pts-l">7,5 pts</span></td><td><div class="bar"><div class="bar-f" style="width:25%;background:#6b6b85;"></div></div></td><td><span class="pm">MÉDIA</span></td></tr>
+        <tr><td>Informática</td><td>5</td><td>1,5</td><td><span class="pts pts-l">7,5 pts</span></td><td><div class="bar"><div class="bar-f" style="width:25%;background:#6b6b85;"></div></div></td><td><span class="pl">BAIXA</span></td></tr>
+        <tr><td>Ética e Direitos Humanos</td><td>5</td><td>1,5</td><td><span class="pts pts-l">7,5 pts</span></td><td><div class="bar"><div class="bar-f" style="width:25%;background:#6b6b85;"></div></div></td><td><span class="pl">BAIXA</span></td></tr>
+        <tr><td>Geografia e Hist. Manaus</td><td>5</td><td>1,5</td><td><span class="pts pts-l">7,5 pts</span></td><td><div class="bar"><div class="bar-f" style="width:25%;background:#6b6b85;"></div></div></td><td><span class="pl">BAIXA</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="card" style="margin-top:16px;">
+    <div style="font-family:'Syne',sans-serif;font-size:16px;font-weight:700;margin-bottom:12px;">Redação — Prova Discursiva</div>
+    <div class="grid2">
+      <div><div style="font-size:12px;color:var(--muted);margin-bottom:4px;">Pontuação</div><div style="font-size:22px;font-weight:700;color:var(--accent);">0 – 20 pts</div></div>
+      <div><div style="font-size:12px;color:var(--muted);margin-bottom:4px;">Mínimo</div><div style="font-size:22px;font-weight:700;color:var(--accent2);">10 pts (50%)</div></div>
+      <div><div style="font-size:12px;color:var(--muted);margin-bottom:4px;">Extensão</div><div style="font-weight:500;">20 a 30 linhas</div></div>
+      <div><div style="font-size:12px;color:var(--muted);margin-bottom:4px;">Corrigida se</div><div style="font-weight:500;">Aprovado na objetiva + top 1.800</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEOAULAS -->
+<section class="sec" id="video">
+  <div class="sec-tag">// 02 — videoaulas gratuitas</div>
+  <h2 class="sec-title">Videoaulas no YouTube</h2>
+  <p class="sec-sub" style="margin-bottom:24px;">Selecione a disciplina e acesse as melhores playlists. Todos os links são 100% gratuitos dos maiores canais de concursos do Brasil.</p>
+
+  <div class="dtabs">
+    <button class="dtab active" onclick="sd('leg')">🔴 Legislação Esp.</button>
+    <button class="dtab" onclick="sd('pt')">📝 Português</button>
+    <button class="dtab" onclick="sd('cf')">⚖️ Dir. Constitucional</button>
+    <button class="dtab" onclick="sd('dp')">🔒 Dir. Penal</button>
+    <button class="dtab" onclick="sd('pp')">🔍 Proc. Penal</button>
+    <button class="dtab" onclick="sd('tr')">🚗 Trânsito</button>
+    <button class="dtab" onclick="sd('it')">💻 Informática</button>
+    <button class="dtab" onclick="sd('et')">🌍 Ética e DH</button>
+    <button class="dtab" onclick="sd('geo')">🗺️ Geo/Hist. Manaus</button>
+    <button class="dtab" onclick="sd('rd')">✍️ Redação</button>
+  </div>
+
+  <!-- LEG ESPECÍFICA -->
+  <div class="dpanel active" id="p-leg">
+    <div class="alert" style="margin-bottom:20px;"><strong>⚠ 30 PONTOS — Prioridade máxima!</strong> Esta disciplina vale 30% da prova. Leis: 13.022/14, LC 16/2021, 13.675/18, 10.826/03, 8.429/92, Maria da Penha, ECA, LGPD, Abuso Autoridade, Drogas, Hediondos.</div>
+    <div class="chan-hdr"><div class="chan-logo" style="background:#c00;color:#fff;">▶</div><div><div class="chan-name">Gran Cursos Online</div><div class="chan-desc">Semana de aulões GCM + aulas de cada lei do edital — canal com + de 1 milhão de inscritos</div></div><a class="chan-lnk" href="https://www.youtube.com/@grancursosonline" target="_blank">Ver canal →</a></div>
+    <div class="vgrid">
+      <a class="vcard" href="https://www.youtube.com/playlist?list=PLpS0sfOKtGHhZTjXlr5y0F4PaOFlTIVW4" target="_blank">
+        <div class="vthumb"><img src="https://img.youtube.com/vi/kLFPJT_cTBQ/hqdefault.jpg" alt="GCM"><div class="pbtn"></div></div>
+        <div class="vinfo"><div class="vchan">Gran Cursos</div><div class="vtitle">Semana GCM — Lei 13.022 + Leg. Especial Completa</div><div class="vmeta"><span class="vbadge bp">PLAYLIST</span><span class="vbadge ba">GRÁTIS</span></div></div>
+      </a>
+      <a class="vcard" href="https://www.youtube.com/results?search_query=gran+cursos+lei+13022+guarda+municipal" target="_blank">
+        <div class="vthumb"><img src="https://img.youtube.com/vi/9p4R7n0E9Hc/hqdefault.jpg" alt="lei maria da penha"><div class="pbtn"></div></div>
+        <div class="vinfo"><div class="vchan">Gran Cursos</div><div class="vtitle">Lei Maria da Penha (11.340/06) — Aula Completa</div><div class="vmeta"><span class="vbadge ba">AULA</span><span class="vbadge ba">GRÁTIS</span></div></div>
+      </a>
+      <a class="vcard" href="https://www.youtube.com/results?search_query=gran+cursos+ECA+crimes+guarda+municipal" target="_blank">
+        <div class="vthumb"><img src="https://img.youtube.com/vi/kLFPJT_cTBQ/hqdefault.jpg" alt="ECA crimes"><div class="pbtn"></div></div>
+        <div class="vinfo"><div class="vchan">Gran Cursos</div><div class="vtitle">ECA — Crimes do Estatuto da Criança e do Adolescente</div><div class="vmeta"><span class="vbadge ba">AULA</span><span class="vbadge ba">GRÁTIS</span></div></div>
+      </a>
+    </div>
+    <div class="chan-hdr" style="margin-top:24px;"><div class="chan-logo" style="background:#1a56db;color:#fff;">E</div><div><div class="chan-name">Estratégia Concursos</div><div class="chan-desc">Aulas completas de cada lei + questões comentadas específicas para GCM</div></div><a class="chan-lnk" href="https://www.youtube.com/@EstrategiaConcursos" target="_blank">Ver canal →</a></div>
+    <div class="vgrid">
+      <a class="vcard" href="https://www.youtube.com/results?search_query=estrategia+concursos+lei+13022+estatuto+guardas+municipais" target="_blank">
+        <div class="vthumb"><img src="https://img.youtube.com/vi/6Jm5bk2h7K8/hqdefault.jpg" alt="Estatuto Guardas"><div class="pbtn"></div></div>
+        <div class="vinfo"><div class="vchan">Estratégia Concursos</div><div class="vtitle">Lei 13.022/14 — Estatuto Geral das Guardas Municipais</div><div class="vmeta"><span class="vbadge ba">AULA</span><span class="vbadge ba">GRÁTIS</span></div></div>
+      </a>
+      <a class="vcard" href="https://www.youtube.com/results?search_query=estrategia+concursos+improbidade+administrativa+lei+8429" target="_blank">
+        <div class="vthumb"><img src="https://img.youtube.com/vi/vMX2zM0s0dE/hqdefault.jpg" alt="Improbidade"><div class="pbtn"></div></div>
+        <div class="vinfo"><div class="vchan">Estratégia Concursos</div><div class="vtitle">Improbidade Administrativa — Lei 8.429/92</div><div class="vmeta"><span class="vbadge ba">AULA</span><span class="vbadge ba">GRÁTIS</span></div></div>
+      </a>
+      <a class="vcard" href="https://www.youtube.com/results?search_query=estrategia+concursos+SUSP+lei+13675" target="_blank">
+        <div class="vthumb"><img src="https://img.youtube.com/vi/FLm7y3kP2cQ/hqdefault.jpg" alt="SUSP"><div class="pbtn"></div></div>
+        <div class="vinfo"><div class="vchan">Estratégia Concursos</div><div class="vtitle">SUSP — Lei 13.675/18 Sistema Único de Segurança Pública</div><div class="vmeta"><span class="vbadge ba">AULA</span><span class="vbadge ba">GRÁTIS</span></div></div>
+      </a>
+    </div>
+    <div class="chan-hdr" style="margin-top:24px;"><div class="chan-logo" style="background:#7c3aed;color:#fff;">A</div><div><div class="chan-name">AlfaCon Concursos</div><div class="chan-desc">Curso GRATUITO de Guarda Municipal — 15 aulas de Legislação Especial</div></div><a class="chan-lnk" href="https://www.youtube.com/@AlfaConConcursosPublicos" target="_blank">Ver canal →</a></div>
+    <div class="vgrid">
+      <a class="vcard" href="https://www.youtube.com/results?search_query=alfacon+crimes+hediondos+lei+8072+concurso" target="_blank">
+        <div class="vthumb"><img src="https://img.youtube.com/vi/7oJqF1dMnEM/hqdefault.jpg" alt="Crimes hediondos"><div class="pbtn"></div></div>
+        <div class="vinfo"><div class="vchan">AlfaCon</div><div class="vtitle">Crimes Hediondos (Lei 8.072/90) — Concurso GCM</div><div class="vmeta"><span class="vbadge ba">AULA</span><span class="vbadge ba">GRÁTIS</span></div></div>
+      </a>
+      <a class="vcard" href="https://www.youtube.com/results?search_query=alfacon+abuso+autoridade+lei+13869+concurso" target="_blank">
+        <div class="vthumb"><img src="https://img.youtube.com/vi/bNkf9P6A7TE/hqdefault.jpg" alt="Abuso autoridade"><div class="pbtn"></div></div>
+        <div class="vinfo"><div class="vchan">AlfaCon</div><div class="vtitle">Lei de Abuso de Autoridade (13.869/19)</div><div class="vmeta"><span class="vbadge ba">AULA</span><span class="vbadge ba">GRÁTIS</span></div></div>
+      </a>
+      <a class="vcard" href="https://www.youtube.com/results?search_query=alfacon+lei+de+drogas+11343+concurso" target="_blank">
+        <div class="vthumb"><img src="https://img.youtube.com/vi/mTkR3VmFJ2A/hqdefault.jpg" alt="Lei drogas"><div class="pbtn"></div></div>
+        <div class="vinfo"><div class="vchan">AlfaCon</div><div class="vtitle">Lei de Drogas (11.343/06) — Pontos mais cobrados</div><div class="vmeta"><span class="vbadge ba">AULA</span><span class="vbadge ba">GRÁTIS</span></div></div>
+      </a>
+    </div>
+    <div style="background:var(--tag);border:1px solid var(--border);border-radius:12px;padding:16px 20px;margin-top:20px;">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--accent2);margin-bottom:12px;">BUSCA RÁPIDA — mais leis do edital</div>
+      <div class="grid3">
+        <a class="vcard" href="https://www.youtube.com/results?search_query=LGPD+lei+13709+concurso+público" target="_blank"><div class="vinfo"><div class="vchan">YouTube</div><div class="vtitle">🔍 LGPD — Lei 13.709/18</div></div></a>
+        <a class="vcard" href="https://www.youtube.com/results?search_query=lei+maria+da+penha+11340+concurso+público" target="_blank"><div class="vinfo"><div class="vchan">YouTube</div><div class="vtitle">🔍 Lei Maria da Penha 11.340/06</div></div></a>
+        <a class="vcard" href="https://www.youtube.com/results?search_query=estatuto+desarmamento+lei+10826+concurso" target="_blank"><div class="vinfo"><div class="vchan">YouTube</div><div class="vtitle">🔍 Estatuto do Desarmamento 10.826/03</div></div></a>
+        <a class="vcard" href="https://www.youtube.com/results?search_query=lei+acesso+informacao+12527+concurso" target="_blank"><div class="vinfo"><div class="vchan">YouTube</div><div class="vtitle">🔍 Lei de Acesso à Informação 12.527/11</div></div></a>
+        <a class="vcard" href="https://www.youtube.com/results?search_query=crimes+ambientais+lei+9605+concurso" target="_blank"><div class="vinfo"><div class="vchan">YouTube</div><div class="vtitle">🔍 Lei de Crimes Ambientais 9.605/98</div></div></a>
+        <a class="vcard" href="https://www.youtube.com/results?search_query=lei+tortura+9455+concurso+público" target="_blank"><div class="vinfo"><div class="vchan">YouTube</div><div class="vtitle">🔍 Lei de Tortura 9.455/97</div></div></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- PORTUGUÊS -->
+  <div class="dpanel" id="p-pt">
+    <div class="chan-hdr"><div class="chan-logo" style="background:#c00;color:#fff;">▶</div><div><div class="chan-name">Gran Cursos Online</div><div class="chan-desc">Gramática completa + interpretação de textos para concursos de nível médio</div></div><a class="chan-lnk" href="https://www.youtube.com/@grancursosonline" target="_blank">Ver canal →</a></div>
+    <div class="vgrid">
+      <a class="vcard" href="https://www.youtube.com/results?search_query=gran+cursos+lingua+portuguesa+concurso+nivel+medio+interpretacao" target="_blank">
+        <div class="vthumb"><img src="https://img.youtube.com/vi/e3v3NQlJYS4/hqdefault.jpg" alt="portugues"><div class="pbtn"></div></div>
+        <div class="vinfo"><div class="vchan">Gran Cursos</div><div class="vtitle">Língua Portuguesa Completa — Gramática e Interpretação</div><div class="vmeta"><span class="vbadge bp">PLAYLIST</span><span class="vbadge ba">GRÁTIS</span></div></div>
+      </a>
+      <a class="vcard" href="https://www.youtube.com/results?search_query=gran+cursos+interpretacao+texto+concurso" target="_blank">
+        <div class="vthumb"><img src="https://img.youtube.com/vi/rG5ZmBIJ3Nk/hqdefault.jpg" alt="interpretacao"><div class="pbtn"></div></div>
+        <div class="vinfo"><div class="vchan">Gran Cursos</div><div class="vtitle">Interpretação de Texto — Técnicas para Concurso</div><div class="vmeta"><span class="vbadge ba">AULA</span><span class="vbadge ba">GRÁTIS</span></div></div>
+      </a>
+      <a class="vcard" href="https://www.youtube.com/results?search_query=gran+cursos+concordância+verbal+nominal+concurso" target="_blank">
+        <div class="vthumb"><img src="https://img.youtube.com/vi/XZ8ND4OuZ3Q/hqdefault.jpg" alt="concordancia"><div class="pbtn"></div></div>
+        <div class="vinfo"><div class="vchan">Gran Cursos</div><div class="vtitle">Concordância Verbal e Nominal — Questões</div><div class="vmeta"><span class="vbadge ba">AULA</span><span class="vbadge ba">GRÁTIS</span></div></div>
+      </a>
+    </div>
+    <div class="chan-hdr" style="margin-top:24px;"><div class="chan-logo" style="background:#1a56db;color:#fff;">E</div><div><div class="chan-name">Estratégia Concursos</div><div class="chan-desc">Ortografia, acentuação, crase, sintaxe e regência — foco em bancas de nível médio</div></div><a class="chan-lnk" href="https://www.youtube.com/@EstrategiaConcursos" target="_blank">Ver canal →</a></div>
+    <div class="vgrid">
+      <a class="vcard" href="https://www.youtube.com/results?search_query=estrategia+concursos+ortografia+acentuacao+crase" target="_blank">
+        <div class="vthumb"><img src="https://img.youtube.com/vi/TdR5F2X8nHc/hqdefault.jpg" alt="ortografia"><div class="pbtn"></div></div>
+        <div class="vinfo"><div class="vchan">Estratégia Concursos</div><div class="vtitle">Ortografia, Acentuação e Crase — Completo</div><div class="vmeta"><span class="vbadge ba">AULA</span><span class="vbadge ba">GRÁTIS</span></div></div>
+      </a>
+      <a class="vcard" href="https://www.youtube.com/results?search_query=estrategia+concursos+sintaxe+regencia+pontuacao" target="_blank">
+        <div class="vthumb"><img src="https://img.youtube.com/vi/Y5Xk8OaX8WE/hqdefault.jpg" alt="sintaxe"><div class="pbtn"></div></div>
+        <div class="vinfo"><div class="vchan">Estratégia Concursos</div><div class="vtitle">Sintaxe, Regência e Pontuação</div><div class="vmeta"><span class="vbadge ba">AULA</span><span class="vbadge ba">GRÁTIS</span></div></div>
+      </a>
+    </div>
+  </div>
+
+  <!-- CONSTITUCIONAL -->
+  <div class="dpanel" id="p-cf">
+    <div class="chan-hdr"><div class="chan-logo" style="background:#1a56db;color:#fff;">E</div><div><div class="chan-name">Estratégia Concursos</div><div class="chan-desc">Dir. Constitucional — arts. cobrados em GCM: 1-4, 18-31, 37-41, 44-135, 136-144</div></div><a class="chan-lnk" href="https://www.youtube.com/@EstrategiaConcursos" target="_blank">Ver canal →</a></div>
+    <div class="vgrid">
+      <a class="vcard" href="https://www.youtube.com/results?search_query=estrategia+concursos+direito+constitucional+principios+fundamentais+CF" target="_blank">
+        <div class="vthumb"><img src="https://img.youtube.com/vi/2k9N3DqYlKo/hqdefault.jpg" alt="constitucional"><div class="pbtn"></div></div>
+        <div class="vinfo"><div class="vchan">Estratégia Concursos</div><div class="vtitle">Princípios Fundamentais (Arts. 1-4) e Direitos Fundamentais</div><div class="vmeta"><span class="vbadge bp">PLAYLIST</span><span class="vbadge ba">GRÁTIS</span></div></div>
+      </a>
+      <a class="vcard" href="https://www.youtube.com/results?search_query=estrategia+concursos+administracao+publica+art+37+CF+servidor" target="_blank">
+        <div class="vthumb"><img src="https://img.youtube.com/vi/HQEZ4h8y0bI/hqdefault.jpg" alt="admin publica"><div class="pbtn"></div></div>
+        <div class="vinfo"><div class="vchan">Estratégia Concursos</div><div class="vtitle">Administração Pública — Art. 37 ao 41 CF</div><div class="vmeta"><span class="vbadge ba">AULA</span><span class="vbadge ba">GRÁTIS</span></div></div>
+      </a>
+      <a class="vcard" href="https://www.youtube.com/results?search_query=estrategia+concursos+segurança+publica+art+144+CF+municipio" target="_blank">
+        <div class="vthumb"><img src="https://img.youtube.com/vi/Jl7E5fXdS1Q/hqdefault.jpg" alt="seg publica"><div class="pbtn"></div></div>
+        <div class="vinfo"><div class="vchan">Estratégia Concursos</div><div class="vtitle">Segurança Pública — Arts. 136-144 CF (Guarda Municipal)</div><div class="vmeta"><span class="vbadge ba">AULA</span><span class="vbadge ba">GRÁTIS</span></div></div>
+      </a>
+    </div>
+    <div class="chan-hdr" style="margin-top:24px;"><div class="chan-logo" style="background:#c00;color:#fff;">▶</div><div><div class="chan-name">Gran Cursos Online</div><div class="chan-desc">Questões comentadas de Constitucional para concursos policiais e GCM</div></div><a class="chan-lnk" href="https://www.youtube.com/@grancursosonline" target="_blank">Ver canal →</a></div>
+    <div class="vgrid">
+      <a class="vcard" href="https://www.youtube.com/results?search_query=gran+cursos+direitos+garantias+fundamentais+CF+art+5" target="_blank">
+        <div class="vthumb"><img src="https://img.youtube.com/vi/Pz3BVIJ1nMk/hqdefault.jpg" alt="direitos fundamentais"><div class="pbtn"></div></div>
+        <div class="vinfo"><div class="vchan">Gran Cursos</div><div class="vtitle">Direitos e Garantias Fundamentais — Art. 5º e seguintes</div><div class="vmeta"><span class="vbadge ba">AULA</span><span class="vbadge ba">GRÁTIS</span></div></div>
+      </a>
+      <a class="vcard" href="https://www.youtube.com/results?search_query=gran+cursos+municipios+CF+arts+29+31+organização+politica" target="_blank">
+        <div class="vthumb"><img src="https://img.youtube.com/vi/OkMvZEJGU0c/hqdefault.jpg" alt="municipios"><div class="pbtn"></div></div>
+        <div class="vinfo"><div class="vchan">Gran Cursos</div><div class="vtitle">Organização Político-Administrativa — Municípios</div><div class="vmeta"><span class="vbadge ba">AULA</span><span class="vbadge ba">GRÁTIS</span></div></div>
+      </a>
+    </div>
+  </div>
+
+  <!-- DIREITO PENAL -->
+  <div class="dpanel" id="p-dp">
+    <div class="chan-hdr"><div class="chan-logo" style="background:#c00;color:#fff;">▶</div><div><div class="chan-name">Gran Cursos Online</div><div class="chan-desc">Parte Geral do Direito Penal completa — teoria do crime, ilicitude, culpabilidade</div></div><a class="chan-lnk" href="https://www.youtube.com/@grancursosonline" target="_blank">Ver canal →</a></div>
+    <div class="vgrid">
+      <a class="vcard" href="https://www.youtube.com/results?search_query=gran+cursos+direito+penal+teoria+geral+crime+parte+geral" target="_blank">
+        <div class="vthumb"><img src="https://img.youtube.com/vi/njsGpbS7u48/hqdefault.jpg" alt="penal parte geral"><div class="pbtn"></div></div>
+        <div class="vinfo"><div class="vchan">Gran Cursos</div><div class="vtitle">Direito Penal — Teoria Geral do Crime Completo</div><div class="vmeta"><span class="vbadge bp">PLAYLIST</span><span class="vbadge ba">GRÁTIS</span></div></div>
+      </a>
+      <a class="vcard" href="https://www.youtube.com/results?search_query=gran+cursos+crime+doloso+culposo+ilicitude+culpabilidade" target="_blank">
+        <div class="vthumb"><img src="https://img.youtube.com/vi/7bWA0cNrHd0/hqdefault.jpg" alt="doloso culposo"><div class="pbtn"></div></div>
+        <div class="vinfo"><div class="vchan">Gran Cursos</div><div class="vtitle">Crime Doloso e Culposo — Ilicitude e Culpabilidade</div><div class="vmeta"><span class="vbadge ba">AULA</span><span class="vbadge ba">GRÁTIS</span></div></div>
+      </a>
+      <a class="vcard" href="https://www.youtube.com/results?search_query=gran+cursos+legítima+defesa+estado+necessidade+exclusão+ilicitude" target="_blank">
+        <div class="vthumb"><img src="https://img.youtube.com/vi/P2z3h0nZ0T8/hqdefault.jpg" alt="legítima defesa"><div class="pbtn"></div></div>
+        <div class="vinfo"><div class="vchan">Gran Cursos</div><div class="vtitle">Legítima Defesa e Exclusão da Ilicitude</div><div class="vmeta"><span class="vbadge ba">AULA</span><span class="vbadge ba">GRÁTIS</span></div></div>
+      </a>
+    </div>
+    <div class="chan-hdr" style="margin-top:24px;"><div class="chan-logo" style="background:#1a56db;color:#fff;">E</div><div><div class="chan-name">Estratégia Concursos</div><div class="chan-desc">Iter criminis, tentativa, consumação, concurso de agentes — questões comentadas</div></div><a class="chan-lnk" href="https://www.youtube.com/@EstrategiaConcursos" target="_blank">Ver canal →</a></div>
+    <div class="vgrid">
+      <a class="vcard" href="https://www.youtube.com/results?search_query=estrategia+concursos+iter+criminis+tentativa+consumação+desistência" target="_blank">
+        <div class="vthumb"><img src="https://img.youtube.com/vi/VmJGfDxNGKQ/hqdefault.jpg" alt="iter criminis"><div class="pbtn"></div></div>
+        <div class="vinfo"><div class="vchan">Estratégia Concursos</div><div class="vtitle">Iter Criminis, Tentativa e Consumação</div><div class="vmeta"><span class="vbadge ba">AULA</span><span class="vbadge ba">GRÁTIS</span></div></div>
+      </a>
+      <a class="vcard" href="https://www.youtube.com/results?search_query=estrategia+concursos+concurso+de+agentes+autoria+participação" target="_blank">
+        <div class="vthumb"><img src="https://img.youtube.com/vi/hHj5GIexNME/hqdefault.jpg" alt="concurso agentes"><div class="pbtn"></div></div>
+        <div class="vinfo"><div class="vchan">Estratégia Concursos</div><div class="vtitle">Concurso de Agentes — Autoria e Participação</div><div class="vmeta"><span class="vbadge ba">AULA</span><span class="vbadge ba">GRÁTIS</span></div></div>
+      </a>
+    </div>
+  </div>
+
+  <!-- PROC PENAL -->
+  <div class="dpanel" id="p-pp">
+    <div class="chan-hdr"><div class="chan-logo" style="background:#c00;color:#fff;">▶</div><div><div class="chan-name">Gran Cursos Online</div><div class="chan-desc">Prisão, flagrante, prova, inquérito e TCO — temas do edital GCM Manaus</div></div><a class="chan-lnk" href="https://www.youtube.com/@grancursosonline" target="_blank">Ver canal →</a></div>
+    <div class="vgrid">
+      <a class="vcard" href="https://www.youtube.com/results?search_query=gran+cursos+prisão+em+flagrante+espécies+processo+penal" target="_blank">
+        <div class="vthumb"><img src="https://img.youtube.com/vi/eDKJy4I4Lzw/hqdefault.jpg" alt="flagrante"><div class="pbtn"></div></div>
+        <div class="vinfo"><div class="vchan">Gran Cursos</div><div class="vtitle">Prisão em Flagrante — Espécies, Formalidades e TCO</div><div class="vmeta"><span class="vbadge bp">PLAYLIST</span><span class="vbadge ba">GRÁTIS</span></div></div>
+      </a>
+      <a class="vcard" href="https://www.youtube.com/results?search_query=gran+cursos+provas+processo+penal+prova+ilícita+teoria" target="_blank">
+        <div class="vthumb"><img src="https://img.youtube.com/vi/UvH4G0iXJKE/hqdefault.jpg" alt="provas"><div class="pbtn"></div></div>
+        <div class="vinfo"><div class="vchan">Gran Cursos</div><div class="vtitle">Provas no Processo Penal — Teoria Geral + Ilícitas</div><div class="vmeta"><span class="vbadge ba">AULA</span><span class="vbadge ba">GRÁTIS</span></div></div>
+      </a>
+      <a class="vcard" href="https://www.youtube.com/results?search_query=gran+cursos+inquérito+policial+características+prazo+processo+penal" target="_blank">
+        <div class="vthumb"><img src="https://img.youtube.com/vi/6cY4e7SUJL0/hqdefault.jpg" alt="inquerito"><div class="pbtn"></div></div>
+        <div class="vinfo"><div class="vchan">Gran Cursos</div><div class="vtitle">Inquérito Policial — Características e Procedimentos</div><div class="vmeta"><span class="vbadge ba">AULA</span><span class="vbadge ba">GRÁTIS</span></div></div>
+      </a>
+    </div>
+  </div>
+
+  <!-- TRÂNSITO -->
+  <div class="dpanel" id="p-tr">
+    <div class="chan-hdr"><div class="chan-logo" style="background:#1a56db;color:#fff;">E</div><div><div class="chan-name">Estratégia Concursos</div><div class="chan-desc">CTB — Lei 9.503/97 completo + Res. CONTRAN 985/2022 para GCM</div></div><a class="chan-lnk" href="https://www.youtube.com/@EstrategiaConcursos" target="_blank">Ver canal →</a></div>
+    <div class="vgrid">
+      <a class="vcard" href="https://www.youtube.com/results?search_query=estrategia+concursos+CTB+código+transito+brasileiro+completo" target="_blank">
+        <div class="vthumb"><img src="https://img.youtube.com/vi/sG4C2iAlV5Y/hqdefault.jpg" alt="CTB"><div class="pbtn"></div></div>
+        <div class="vinfo"><div class="vchan">Estratégia Concursos</div><div class="vtitle">CTB — Código de Trânsito Brasileiro Completo</div><div class="vmeta"><span class="vbadge bp">PLAYLIST</span><span class="vbadge ba">GRÁTIS</span></div></div>
+      </a>
+      <a class="vcard" href="https://www.youtube.com/results?search_query=estrategia+concursos+infrações+penalidades+trânsito+CTB" target="_blank">
+        <div class="vthumb"><img src="https://img.youtube.com/vi/6N3MOPK4p4c/hqdefault.jpg" alt="infracoes"><div class="pbtn"></div></div>
+        <div class="vinfo"><div class="vchan">Estratégia Concursos</div><div class="vtitle">Infrações e Penalidades de Trânsito — Questões</div><div class="vmeta"><span class="vbadge ba">AULA</span><span class="vbadge ba">GRÁTIS</span></div></div>
+      </a>
+      <a class="vcard" href="https://www.youtube.com/results?search_query=gran+cursos+crimes+de+transito+CTB+embriaguez" target="_blank">
+        <div class="vthumb"><img src="https://img.youtube.com/vi/3-OtPFW4UR4/hqdefault.jpg" alt="crimes transito"><div class="pbtn"></div></div>
+        <div class="vinfo"><div class="vchan">Gran Cursos</div><div class="vtitle">Crimes de Trânsito (CTB) — Embriaguez e Lesão</div><div class="vmeta"><span class="vbadge ba">AULA</span><span class="vbadge ba">GRÁTIS</span></div></div>
+      </a>
+    </div>
+  </div>
+
+  <!-- INFORMÁTICA -->
+  <div class="dpanel" id="p-it">
+    <div class="chan-hdr"><div class="chan-logo" style="background:#1a56db;color:#fff;">E</div><div><div class="chan-name">Estratégia Concursos</div><div class="chan-desc">Windows 10/11, Office 365, internet, segurança da informação e cloud</div></div><a class="chan-lnk" href="https://www.youtube.com/@EstrategiaConcursos" target="_blank">Ver canal →</a></div>
+    <div class="vgrid">
+      <a class="vcard" href="https://www.youtube.com/results?search_query=estrategia+concursos+informática+windows+office+365+concurso" target="_blank">
+        <div class="vthumb"><img src="https://img.youtube.com/vi/G2jZ3gv1wVA/hqdefault.jpg" alt="informatica windows"><div class="pbtn"></div></div>
+        <div class="vinfo"><div class="vchan">Estratégia Concursos</div><div class="vtitle">Windows e Office 365 para Concursos — Completo</div><div class="vmeta"><span class="vbadge bp">PLAYLIST</span><span class="vbadge ba">GRÁTIS</span></div></div>
+      </a>
+      <a class="vcard" href="https://www.youtube.com/results?search_query=estrategia+concursos+segurança+informação+vírus+firewall+backup" target="_blank">
+        <div class="vthumb"><img src="https://img.youtube.com/vi/8cP0T7z6BqQ/hqdefault.jpg" alt="seguranca info"><div class="pbtn"></div></div>
+        <div class="vinfo"><div class="vchan">Estratégia Concursos</div><div class="vtitle">Segurança da Informação — Vírus, Antivírus e Backup</div><div class="vmeta"><span class="vbadge ba">AULA</span><span class="vbadge ba">GRÁTIS</span></div></div>
+      </a>
+      <a class="vcard" href="https://www.youtube.com/results?search_query=estrategia+concursos+internet+navegadores+email+edge+chrome+outlook" target="_blank">
+        <div class="vthumb"><img src="https://img.youtube.com/vi/mJMx0Kn0gIc/hqdefault.jpg" alt="internet navegadores"><div class="pbtn"></div></div>
+        <div class="vinfo"><div class="vchan">Estratégia Concursos</div><div class="vtitle">Internet, Navegadores e E-mail — Outlook, Edge, Chrome</div><div class="vmeta"><span class="vbadge ba">AULA</span><span class="vbadge ba">GRÁTIS</span></div></div>
+      </a>
+    </div>
+  </div>
+
+  <!-- ÉTICA E DH -->
+  <div class="dpanel" id="p-et">
+    <div class="chan-hdr"><div class="chan-logo" style="background:#7c3aed;color:#fff;">A</div><div><div class="chan-name">AlfaCon Concursos</div><div class="chan-desc">DUDH, Pacto San José, Estatuto da Igualdade Racial, ética no serviço público</div></div><a class="chan-lnk" href="https://www.youtube.com/@AlfaConConcursosPublicos" target="_blank">Ver canal →</a></div>
+    <div class="vgrid">
+      <a class="vcard" href="https://www.youtube.com/results?search_query=alfacon+direitos+humanos+DUDH+declaração+universal+1948+concurso" target="_blank">
+        <div class="vthumb"><img src="https://img.youtube.com/vi/gLkP9RNNdwM/hqdefault.jpg" alt="DUDH"><div class="pbtn"></div></div>
+        <div class="vinfo"><div class="vchan">AlfaCon</div><div class="vtitle">DUDH — Declaração Universal dos Direitos Humanos 1948</div><div class="vmeta"><span class="vbadge ba">AULA</span><span class="vbadge ba">GRÁTIS</span></div></div>
+      </a>
+      <a class="vcard" href="https://www.youtube.com/results?search_query=alfacon+pacto+san+jose+costa+rica+convenção+americana+direitos+humanos" target="_blank">
+        <div class="vthumb"><img src="https://img.youtube.com/vi/LNkhJGMidQk/hqdefault.jpg" alt="San Jose"><div class="pbtn"></div></div>
+        <div class="vinfo"><div class="vchan">AlfaCon</div><div class="vtitle">Pacto de San José da Costa Rica — Convenção Americana DH</div><div class="vmeta"><span class="vbadge ba">AULA</span><span class="vbadge ba">GRÁTIS</span></div></div>
+      </a>
+      <a class="vcard" href="https://www.youtube.com/results?search_query=gran+cursos+ética+serviço+público+código+conduta+concurso" target="_blank">
+        <div class="vthumb"><img src="https://img.youtube.com/vi/rX4b2g1uJVA/hqdefault.jpg" alt="etica"><div class="pbtn"></div></div>
+        <div class="vinfo"><div class="vchan">Gran Cursos</div><div class="vtitle">Ética no Serviço Público — Código de Conduta</div><div class="vmeta"><span class="vbadge ba">AULA</span><span class="vbadge ba">GRÁTIS</span></div></div>
+      </a>
+    </div>
+  </div>
+
+  <!-- GEO HIST MANAUS -->
+  <div class="dpanel" id="p-geo">
+    <div class="tip tw" style="margin-bottom:20px;">Não há playlists prontas para GCM Manaus 2026. Use as buscas abaixo e estude o resumo dos pontos-chave.</div>
+    <div class="vgrid">
+      <a class="vcard" href="https://www.youtube.com/results?search_query=historia+de+manaus+fundacao+ciclo+borracha+belle+epoque" target="_blank"><div class="vthumb" style="background:#1a1a2e;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;padding:20px;"><div style="font-size:32px;">🏛️</div><div style="font-size:12px;color:#9999bb;text-align:center;">Buscar no YouTube</div></div><div class="vinfo"><div class="vchan">YouTube</div><div class="vtitle">🔍 História de Manaus — Fundação e Ciclo da Borracha</div></div></a>
+      <a class="vcard" href="https://www.youtube.com/results?search_query=zona+franca+manaus+polo+industrial+história+1967" target="_blank"><div class="vthumb" style="background:#1a1a2e;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;padding:20px;"><div style="font-size:32px;">🏭</div><div style="font-size:12px;color:#9999bb;text-align:center;">Buscar no YouTube</div></div><div class="vinfo"><div class="vchan">YouTube</div><div class="vtitle">🔍 Zona Franca de Manaus — história e economia</div></div></a>
+      <a class="vcard" href="https://www.youtube.com/results?search_query=teatro+amazonas+manaus+pontos+turisticos+patrimônio" target="_blank"><div class="vthumb" style="background:#1a1a2e;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;padding:20px;"><div style="font-size:32px;">🎭</div><div style="font-size:12px;color:#9999bb;text-align:center;">Buscar no YouTube</div></div><div class="vinfo"><div class="vchan">YouTube</div><div class="vtitle">🔍 Teatro Amazonas e pontos turísticos de Manaus</div></div></a>
+      <a class="vcard" href="https://www.youtube.com/results?search_query=encontro+das+aguas+rio+negro+solimoes+amazonas+manaus" target="_blank"><div class="vthumb" style="background:#1a1a2e;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;padding:20px;"><div style="font-size:32px;">🌊</div><div style="font-size:12px;color:#9999bb;text-align:center;">Buscar no YouTube</div></div><div class="vinfo"><div class="vchan">YouTube</div><div class="vtitle">🔍 Encontro das Águas — Rio Negro e Solimões</div></div></a>
+    </div>
+    <div class="card" style="margin-top:16px;">
+      <div style="font-size:14px;font-weight:500;margin-bottom:14px;">Resumo dos pontos essenciais para a prova:</div>
+      <div class="grid3">
+        <div style="font-size:12px;color:var(--muted);"><strong style="color:var(--text);display:block;margin-bottom:3px;">Fundação</strong>1669 (forte) | Cidade: 1848 | Capital do AM</div>
+        <div style="font-size:12px;color:var(--muted);"><strong style="color:var(--text);display:block;margin-bottom:3px;">Ciclo da Borracha</strong>1850–1920 | Belle Époque amazônica | Teatro Amazonas (1896)</div>
+        <div style="font-size:12px;color:var(--muted);"><strong style="color:var(--text);display:block;margin-bottom:3px;">Zona Franca</strong>Criada em 1967 | Polo Industrial (PIM) | Incentivos fiscais</div>
+        <div style="font-size:12px;color:var(--muted);"><strong style="color:var(--text);display:block;margin-bottom:3px;">Hidrografia</strong>Rio Negro + Solimões = Amazonas | Encontro das Águas | Lago de Januária</div>
+        <div style="font-size:12px;color:var(--muted);"><strong style="color:var(--text);display:block;margin-bottom:3px;">Pontos turísticos</strong>Teatro Amazonas, MUSA, Palácio Rio Negro, Encontro das Águas, Museu do Seringal</div>
+        <div style="font-size:12px;color:var(--muted);"><strong style="color:var(--text);display:block;margin-bottom:3px;">Clima e natureza</strong>Equatorial úmido | Floresta amazônica | Maior biodiversidade do planeta</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- REDAÇÃO -->
+  <div class="dpanel" id="p-rd">
+    <div class="tip ts" style="margin-bottom:20px;">Treine pelo menos 1 redação por semana. Formato: introdução + 2 parágrafos + conclusão. Mínimo 20 linhas, máximo 30. Use caneta azul ou preta de corpo transparente.</div>
+    <div class="chan-hdr"><div class="chan-logo" style="background:#c00;color:#fff;">▶</div><div><div class="chan-name">Gran Cursos Online</div><div class="chan-desc">Redação dissertativa para concursos — estrutura, coesão, coerência e argumentação</div></div><a class="chan-lnk" href="https://www.youtube.com/@grancursosonline" target="_blank">Ver canal →</a></div>
+    <div class="vgrid">
+      <a class="vcard" href="https://www.youtube.com/results?search_query=gran+cursos+redação+dissertativa+concurso+estrutura+argumentação" target="_blank">
+        <div class="vthumb"><img src="https://img.youtube.com/vi/dNs6G4Hfpc8/hqdefault.jpg" alt="redacao"><div class="pbtn"></div></div>
+        <div class="vinfo"><div class="vchan">Gran Cursos</div><div class="vtitle">Redação Dissertativa — Estrutura e Argumentação</div><div class="vmeta"><span class="vbadge bp">PLAYLIST</span><span class="vbadge ba">GRÁTIS</span></div></div>
+      </a>
+      <a class="vcard" href="https://www.youtube.com/results?search_query=gran+cursos+coesao+coerencia+conectivos+redação+concurso" target="_blank">
+        <div class="vthumb"><img src="https://img.youtube.com/vi/FHR3P4rVkSE/hqdefault.jpg" alt="coesao"><div class="pbtn"></div></div>
+        <div class="vinfo"><div class="vchan">Gran Cursos</div><div class="vtitle">Coesão e Coerência — Conectivos e Progressão Temática</div><div class="vmeta"><span class="vbadge ba">AULA</span><span class="vbadge ba">GRÁTIS</span></div></div>
+      </a>
+      <a class="vcard" href="https://www.youtube.com/results?search_query=redação+segurança+pública+violência+urbana+tema+concurso" target="_blank">
+        <div class="vthumb" style="background:#1a1a2e;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;padding:20px;"><div style="font-size:32px;">✍️</div><div style="font-size:12px;color:#9999bb;text-align:center;">Temas de Segurança</div></div>
+        <div class="vinfo"><div class="vchan">YouTube</div><div class="vtitle">🔍 Temas de redação sobre segurança pública</div></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FONTES -->
+<section class="sec" id="fontes">
+  <div class="sec-tag">// 03 — textos de lei oficiais</div>
+  <h2 class="sec-title">Fontes de Estudo</h2>
+  <p class="sec-sub" style="margin-bottom:24px;">Links diretos para a legislação cobrada no edital — todos 100% gratuitos.</p>
+  <div style="margin-bottom:20px;">
+    <div style="font-family:'Syne',sans-serif;font-size:16px;font-weight:700;margin-bottom:12px;color:var(--accent4);">🔴 Legislação Específica — 30 pts</div>
+    <a class="lnk" href="https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2014/lei/l13022.htm" target="_blank"><div class="lico">📋</div><div><div class="ltitle">Lei 13.022/2014 — Estatuto Geral das Guardas <span class="lbadge free">GRÁTIS</span></div><div class="ldesc">planalto.gov.br</div></div></a>
+    <a class="lnk" href="https://leismunicipais.com.br/a/am/m/manaus/lei-complementar/2021/2/16" target="_blank"><div class="lico">🏛️</div><div><div class="ltitle">LC 16/2021 — Estatuto da GMM <span class="lbadge free">GRÁTIS</span></div><div class="ldesc">leismunicipais.com.br</div></div></a>
+    <a class="lnk" href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13675.htm" target="_blank"><div class="lico">🛡️</div><div><div class="ltitle">Lei 13.675/2018 — SUSP <span class="lbadge free">GRÁTIS</span></div><div class="ldesc">planalto.gov.br</div></div></a>
+    <a class="lnk" href="https://www.planalto.gov.br/ccivil_03/leis/2003/l10.826.htm" target="_blank"><div class="lico">🔫</div><div><div class="ltitle">Lei 10.826/2003 — Estatuto do Desarmamento <span class="lbadge free">GRÁTIS</span></div><div class="ldesc">planalto.gov.br</div></div></a>
+    <a class="lnk" href="https://www.planalto.gov.br/ccivil_03/leis/l8429.htm" target="_blank"><div class="lico">⚖️</div><div><div class="ltitle">Lei 8.429/1992 — Improbidade Administrativa <span class="lbadge free">GRÁTIS</span></div><div class="ldesc">planalto.gov.br</div></div></a>
+    <a class="lnk" href="https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2006/lei/l11340.htm" target="_blank"><div class="lico">🌺</div><div><div class="ltitle">Lei 11.340/2006 — Lei Maria da Penha <span class="lbadge free">GRÁTIS</span></div><div class="ldesc">planalto.gov.br</div></div></a>
+    <a class="lnk" href="https://www.planalto.gov.br/ccivil_03/leis/l8069.htm" target="_blank"><div class="lico">👶</div><div><div class="ltitle">ECA — Lei 8.069/1990 (arts. 240+) <span class="lbadge free">GRÁTIS</span></div><div class="ldesc">planalto.gov.br</div></div></a>
+    <a class="lnk" href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm" target="_blank"><div class="lico">🔒</div><div><div class="ltitle">Lei 13.709/2018 — LGPD <span class="lbadge free">GRÁTIS</span></div><div class="ldesc">planalto.gov.br</div></div></a>
+    <a class="lnk" href="https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2019/lei/l13869.htm" target="_blank"><div class="lico">👮</div><div><div class="ltitle">Lei 13.869/2019 — Abuso de Autoridade <span class="lbadge free">GRÁTIS</span></div><div class="ldesc">planalto.gov.br</div></div></a>
+    <a class="lnk" href="https://www.planalto.gov.br/ccivil_03/leis/l8072.htm" target="_blank"><div class="lico">🚨</div><div><div class="ltitle">Lei 8.072/1990 — Crimes Hediondos <span class="lbadge free">GRÁTIS</span></div><div class="ldesc">planalto.gov.br</div></div></a>
+    <a class="lnk" href="https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2006/lei/l11343.htm" target="_blank"><div class="lico">💊</div><div><div class="ltitle">Lei 11.343/2006 — Lei de Drogas <span class="lbadge free">GRÁTIS</span></div><div class="ldesc">planalto.gov.br</div></div></a>
+    <a class="lnk" href="https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12527.htm" target="_blank"><div class="lico">📂</div><div><div class="ltitle">Lei 12.527/2011 — Lei de Acesso à Informação <span class="lbadge free">GRÁTIS</span></div><div class="ldesc">planalto.gov.br</div></div></a>
+    <a class="lnk" href="https://www.planalto.gov.br/ccivil_03/leis/l9605.htm" target="_blank"><div class="lico">🌿</div><div><div class="ltitle">Lei 9.605/1998 — Crimes Ambientais <span class="lbadge free">GRÁTIS</span></div><div class="ldesc">planalto.gov.br</div></div></a>
+    <a class="lnk" href="https://www.planalto.gov.br/ccivil_03/leis/l9455.htm" target="_blank"><div class="lico">⛔</div><div><div class="ltitle">Lei 9.455/1997 — Lei de Tortura <span class="lbadge free">GRÁTIS</span></div><div class="ldesc">planalto.gov.br</div></div></a>
+  </div>
+  <div style="margin-bottom:20px;">
+    <div style="font-family:'Syne',sans-serif;font-size:16px;font-weight:700;margin-bottom:12px;color:var(--accent2);">🟢 Constitucional, Penal e Trânsito</div>
+    <a class="lnk" href="https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm" target="_blank"><div class="lico">📜</div><div><div class="ltitle">Constituição Federal de 1988 <span class="lbadge free">GRÁTIS</span></div><div class="ldesc">Arts. 1-4, 18-31, 37-41, 44-135, 136-144</div></div></a>
+    <a class="lnk" href="https://www.planalto.gov.br/ccivil_03/decreto-lei/del2848compilado.htm" target="_blank"><div class="lico">⚖️</div><div><div class="ltitle">Código Penal Brasileiro <span class="lbadge free">GRÁTIS</span></div><div class="ldesc">planalto.gov.br — compilado e atualizado</div></div></a>
+    <a class="lnk" href="https://www.planalto.gov.br/ccivil_03/decreto-lei/del3689compilado.htm" target="_blank"><div class="lico">🔍</div><div><div class="ltitle">Código de Processo Penal <span class="lbadge free">GRÁTIS</span></div><div class="ldesc">Prisão, prova, inquérito, flagrante, TCO</div></div></a>
+    <a class="lnk" href="https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm" target="_blank"><div class="lico">🚗</div><div><div class="ltitle">CTB — Lei 9.503/1997 <span class="lbadge free">GRÁTIS</span></div><div class="ldesc">Código de Trânsito Brasileiro</div></div></a>
+  </div>
+  <div>
+    <div style="font-family:'Syne',sans-serif;font-size:16px;font-weight:700;margin-bottom:12px;color:var(--accent3);">🟡 Plataformas de Simulados</div>
+    <a class="lnk" href="https://www.qconcursos.com" target="_blank"><div class="lico">Q</div><div><div class="ltitle">QConcursos <span class="lbadge free">GRÁTIS</span></div><div class="ldesc">Maior banco de questões — filtre pela banca Consulplan</div></div></a>
+    <a class="lnk" href="https://www.tecconcursos.com.br" target="_blank"><div class="lico">T</div><div><div class="ltitle">TEC Concursos <span class="lbadge free">GRÁTIS</span></div><div class="ldesc">Questões gratuitas com gabarito e estatísticas</div></div></a>
+    <a class="lnk" href="https://www.alfaconcursos.com.br/cursos-gratuitos/curso-basico-para-guardas-municipais-gratuito" target="_blank"><div class="lico">A</div><div><div class="ltitle">AlfaCon — Curso Básico GCM GRATUITO <span class="lbadge free">GRÁTIS</span></div><div class="ldesc">Curso completo de Guarda Municipal — alfaconcursos.com.br</div></div></a>
+  </div>
+</section>
+
+<!-- CRONOGRAMA -->
+<section class="sec" id="crono">
+  <div class="sec-tag">// 04 — datas oficiais</div>
+  <h2 class="sec-title">Cronograma Oficial</h2>
+  <p class="sec-sub" style="margin-bottom:24px;">Todas as datas do Edital nº 01/2026.</p>
+  <div class="card">
+    <div class="ci"><div class="cdot dr"></div><div class="cdate cu">ATÉ 27/03</div><div><strong style="color:var(--accent4);">URGENTE</strong> — Solicitar isenção da taxa até 15h em institutoconsulplan.org.br</div></div>
+    <div class="ci"><div class="cdot dr"></div><div class="cdate cu">ATÉ 16/04</div><div><strong style="color:var(--accent4);">INSCRIÇÕES ENCERRAM</strong> às 15h — R$150</div></div>
+    <div class="ci"><div class="cdot dy"></div><div class="cdate cn">04/05/2026</div><div>Divulgação das inscrições deferidas</div></div>
+    <div class="ci"><div class="cdot dy"></div><div class="cdate cn">18/05/2026</div><div>Divulgação dos locais de prova (CCI)</div></div>
+    <div class="ci"><div class="cdot dr"></div><div class="cdate cu">24/05/2026</div><div><strong style="color:var(--accent4);">PROVA OBJETIVA + REDAÇÃO</strong> — domingo — portões fecham 12h30 — 5 horas</div></div>
+    <div class="ci"><div class="cdot dm"></div><div class="cdate cn">30/06/2026</div><div>Resultado definitivo Prova Objetiva + convocação TAF</div></div>
+    <div class="ci"><div class="cdot dy"></div><div class="cdate cn">25/07–09/08</div><div>TAF — Teste de Aptidão Física</div></div>
+    <div class="ci"><div class="cdot dm"></div><div class="cdate cn">06/09/2026</div><div>Avaliação Psicológica + Entrega Exames Médicos</div></div>
+    <div class="ci"><div class="cdot dg"></div><div class="cdate" style="color:var(--accent2);font-family:'IBM Plex Mono',monospace;font-size:12px;min-width:95px;padding-top:2px;flex-shrink:0;">23/10/2026</div><div>Classificação preliminar das 4 primeiras etapas + convocação Curso de Formação</div></div>
+  </div>
+</section>
+
+<!-- PLANO SEMANAL -->
+<section class="sec" id="plano">
+  <div class="sec-tag">// 05 — rotina de estudos</div>
+  <h2 class="sec-title">Plano Semanal de Estudos</h2>
+  <p class="sec-sub" style="margin-bottom:24px;">Organizado por peso. Mínimo 2h/dia para ter chance real de aprovação.</p>
+  <div class="wgrid">
+    <div class="wcard" style="border-top:3px solid var(--accent4);"><div class="wday" style="color:var(--accent4);">Segunda</div><div class="wsub">Legislação Específica</div><div class="wdet">Lei 13.022 + LC 16/2021 GMM</div><div class="wt">2–3 horas</div></div>
+    <div class="wcard" style="border-top:3px solid #f7c948;"><div class="wday" style="color:#f7c948;">Terça</div><div class="wsub">Leg. Específica II</div><div class="wdet">Maria da Penha, ECA, Hediondos, LGPD, Abuso Auth., Drogas</div><div class="wt">2–3 horas</div></div>
+    <div class="wcard" style="border-top:3px solid var(--accent2);"><div class="wday" style="color:var(--accent2);">Quarta</div><div class="wsub">Português + Redação</div><div class="wdet">Gramática + interpretação + 1 redação</div><div class="wt">2–3 horas</div></div>
+    <div class="wcard" style="border-top:3px solid var(--accent);"><div class="wday" style="color:var(--accent);">Quinta</div><div class="wsub">Dir. Constitucional</div><div class="wdet">Arts. 1-4, 18-31, 37-41, 44-144 CF</div><div class="wt">2 horas</div></div>
+    <div class="wcard" style="border-top:3px solid #b085f5;"><div class="wday" style="color:#b085f5;">Sexta</div><div class="wsub">Dir. Penal + Proc.</div><div class="wdet">Teoria crime, ilicitude, prisão, prova, flagrante, TCO</div><div class="wt">2 horas</div></div>
+    <div class="wcard" style="border-top:3px solid #56ccf2;"><div class="wday" style="color:#56ccf2;">Sábado</div><div class="wsub">Trânsito + Ética + Info</div><div class="wdet">CTB, CONTRAN, DUDH, Windows, Office</div><div class="wt">2 horas</div></div>
+    <div class="wcard" style="border-top:3px solid var(--muted);"><div class="wday" style="color:var(--muted);">Domingo</div><div class="wsub">Revisão + Simulado</div><div class="wdet">60 questões cronometrado (5h) + Geo/Hist. Manaus</div><div class="wt">3–5 horas</div></div>
+  </div>
+</section>
+
+<!-- TAF -->
+<section class="sec" id="taf">
+  <div class="sec-tag">// 06 — aptidão física</div>
+  <h2 class="sec-title">TAF — Teste de Aptidão Física</h2>
+  <p class="sec-sub" style="margin-bottom:24px;">Eliminatório. Previsto entre 25/07 e 09/08/2026. Reprovação em uma fase = eliminado.</p>
+  <div class="card" style="overflow-x:auto;">
+    <table class="ttbl">
+      <thead><tr><th>Exercício</th><th>Masculino</th><th>Feminino</th><th>Tempo</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Flexão Abdominal</strong></td><td class="masc">35 repetições</td><td class="fem">25 repetições</td><td>1 minuto</td></tr>
+        <tr><td><strong>Impulsão Horizontal</strong></td><td class="masc">1,50 m</td><td class="fem">1,20 m</td><td>—</td></tr>
+        <tr><td><strong>Barra Fixa / Flexão Joelhos</strong></td><td class="masc">4 rep. (barra)</td><td class="fem">25 rep.</td><td>Fem: 1 min</td></tr>
+        <tr><td><strong>Corrida de 12 Minutos</strong></td><td class="masc">2.000 m</td><td class="fem">1.600 m</td><td>12 min</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div style="margin-top:18px;" class="grid2">
+    <div class="tip ts">✓ Documento de identidade original com foto</div>
+    <div class="tip ts">✓ Atestado médico original (emitido até 30 dias antes)</div>
+    <div class="tip ts">✓ Candidatas: exame de gravidez (até 15 dias antes)</div>
+    <div class="tip ts">✓ Roupa adequada — sem camiseta de manga longa</div>
+  </div>
+  <div class="tip td" style="margin-top:4px;">Não há segunda chamada. Lesão ou mal súbito no dia = eliminado. Comece a treinar agora!</div>
+</section>
+
+<!-- DICAS -->
+<section class="sec" id="dicas">
+  <div class="sec-tag">// 07 — estratégia</div>
+  <h2 class="sec-title">Dicas e Estratégias</h2>
+  <div class="grid2" style="margin-top:20px;">
+    <div>
+      <div style="font-size:15px;font-weight:600;margin-bottom:12px;">No dia da prova</div>
+      <div class="tip">Chegue 45 min antes. Portões fecham 12h30 — sem exceções.</div>
+      <div class="tip">Caneta esferográfica azul ou preta, corpo transparente. Leve 2.</div>
+      <div class="tip">Leve o CCI impresso e documento de identidade original.</div>
+      <div class="tip tw">Proibido: relógio, celular, fone, qualquer eletrônico.</div>
+      <div class="tip tw">Nada escrito no caderno vale — só o Cartão de Respostas.</div>
+    </div>
+    <div>
+      <div style="font-size:15px;font-weight:600;margin-bottom:12px;">Estratégia de prova</div>
+      <div class="tip">Comece por Legislação Específica e Constitucional (2,0 pts/q).</div>
+      <div class="tip">Não deixe nenhuma em branco — não há desconto por erro.</div>
+      <div class="tip ts">Consulplan cobra literalidade da lei — leia os textos completos.</div>
+      <div class="tip">Redação: introdução + 2 parágrafos + conclusão. Mínimo 20 linhas.</div>
+      <div class="tip tw">Não coloque seu nome na redação fora do campo indicado.</div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>Preparatório GCM Manaus 2026 — baseado no <strong>Edital nº 01, de 23/03/2026</strong></p>
+  <p style="margin-top:6px;">Inscrições: <a href="https://www.institutoconsulplan.org.br" target="_blank">www.institutoconsulplan.org.br</a> | Prova: 24/05/2026</p>
+</footer>
+
+<script>
+function updateCountdown(){var t=new Date('2026-05-24T12:30:00-04:00'),n=new Date(),d=t-n;if(d<=0){document.getElementById('cd').textContent=document.getElementById('ch').textContent=document.getElementById('cm').textContent='0';return;}document.getElementById('cd').textContent=Math.floor(d/(864e5));document.getElementById('ch').textContent=Math.floor((d%864e5)/36e5);document.getElementById('cm').textContent=Math.floor((d%36e5)/6e4);}
+updateCountdown();setInterval(updateCountdown,30000);
+function sd(id){document.querySelectorAll('.dpanel').forEach(function(p){p.classList.remove('active')});document.querySelectorAll('.dtab').forEach(function(t){t.classList.remove('active')});document.getElementById('p-'+id).classList.add('active');event.target.classList.add('active');}
+var ni=document.querySelectorAll('.nav-item');ni.forEach(function(i){i.addEventListener('click',function(){ni.forEach(function(n){n.classList.remove('active')});i.classList.add('active')})});
+window.addEventListener('scroll',function(){var sc=['disc','video','fontes','crono','plano','taf','dicas'],sp=window.scrollY+120;sc.forEach(function(id){var el=document.getElementById(id);if(!el)return;if(el.offsetTop<=sp&&el.offsetTop+el.offsetHeight>sp){ni.forEach(function(n){n.classList.remove('active')});var lk=document.querySelector('.nav-item[href="#'+id+'"]');if(lk)lk.classList.add('active')}})});
+</script>
+</body>
+</html>
